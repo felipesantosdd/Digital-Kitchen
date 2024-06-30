@@ -1,0 +1,36 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id       String    @id @default(uuid())
+  name     String
+  email    String    @unique
+  password String
+  recipes  Recipe[]
+}
+
+model Recipe {
+  id          String       @id @default(uuid())
+  name        String
+  description String
+  image       String
+  link        String
+  userId      String
+  user        User         @relation(fields: [userId], references: [id])
+  ingredients Ingredient[]
+}
+
+model Ingredient {
+  id       String    @id @default(uuid())
+  name     String
+  type     String
+  quantity Int
+  recipeId String
+  recipe   Recipe @relation(fields: [recipeId], references: [id])
+}
