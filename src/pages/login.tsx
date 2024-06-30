@@ -22,7 +22,7 @@ const Login = () => {
     };
 
     return (
-        <div style={{ maxWidth: 300, margin: '100px auto' }}>
+        <div style={{ maxWidth: 300, margin: '100px auto', backgroundColor: 'red' }}>
             <Form
                 name="login"
                 initialValues={{ remember: true }}
