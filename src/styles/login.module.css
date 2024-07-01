@@ -1,0 +1,26 @@
+.formContainer {
+    margin: 100px auto;
+    max-width: 300px;
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid #D82567;
+}
+
+.formTitle {
+    text-align: center;
+    color: #fff;
+    font-weight: 500;
+    font-size: 24px;
+    margin-bottom: 2rem;
+}
+
+.span {
+    color: #fff;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.link {
+
+    color: #D82567;
+}

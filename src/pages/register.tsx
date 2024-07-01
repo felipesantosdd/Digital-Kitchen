@@ -1,6 +1,7 @@
 import { Button, Form, Input } from 'antd';
 import axios from 'axios';
 import { useRouter } from 'next/router';
+import styles from '@/styles/login.module.css'
 
 const Register = () => {
     const router = useRouter();
@@ -28,7 +29,9 @@ const Register = () => {
     };
 
     return (
-        <div style={{ maxWidth: 300, margin: '100px auto' }}>
+        <div className={styles.formContainer}>
+            <h1 className={styles.formTitle}>Registro</h1>
+
             <Form
                 name="register"
                 initialValues={{ remember: true }}
@@ -78,10 +81,13 @@ const Register = () => {
                     <Input.Password placeholder="Confirmar senha" />
                 </Form.Item>
 
+
+
                 <Form.Item>
-                    <Button type="primary" htmlType="submit" style={{ width: '100%' }}>
+                    <Button type="primary" htmlType="submit" style={{ width: '100%', margin: '15px 0' }}>
                         Registrar
                     </Button>
+                    <h5 className={styles.span}>Ja possui Cadastro? Faça o <a className={styles.link} href="/login">Login</a></h5>
                 </Form.Item>
             </Form>
         </div>
